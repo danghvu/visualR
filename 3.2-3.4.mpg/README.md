@@ -1,8 +1,7 @@
 ```R
+# mpg is a data frame (ggplot2::mpg), a collection of 38 models of cars with some data
 mpg
-```
 
-```R
 # A tibble: 234 x 11
    manufacturer model      displ  year   cyl trans      drv     cty   hwy fl    class  
    <chr>        <chr>      <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr>  
@@ -20,17 +19,29 @@ mpg
 ```
 
 ```R
+# this will answer what it is.
 ?mpg
 ```
 
+> This dataset contains a subset of the fuel economy data that the EPA makes available on http://fueleconomy.gov. It contains only models which had a new release every year between 1999 and 2008 - this was used as a proxy for the popularity of the car.
+
 ```R
-ggplot(mpg) +                         
-  geom_point(aes(x = displ, y = hwy))
+# Now we try to plot it.
+ggplot(mpg) +                         # short-cut for ggplot(data = mpg)
+  geom_point(aes(x = displ, y = hwy)) # short-cut for geom_point(mapping = aes())
 ```
   
 ![code-1](mpg1.png)
 
 ```R
+# What is aes ?
+?aes
+```
+
+> Aesthetic mappings describe how variables in the data are mapped to visual properties (aesthetics) of geoms. Aesthetic mappings can be set in ggplot2 and in individual layers.
+
+```R
+# Try to add color to it, this also automatically add appropriate labels.
 ggplot(mpg) + 
   geom_point(aes(x = displ, y = hwy, color = class))
 ```
@@ -38,6 +49,7 @@ ggplot(mpg) +
 ![code-2](mpg2.png)
 
 ```R
+# Same for shape.
 ggplot(mpg) + 
   geom_point(aes(x = displ, y = hwy, alpha = class))
 ```
@@ -45,6 +57,7 @@ ggplot(mpg) +
 ![code-3](mpg3.png)
 
 ```R
+# If we do not add to the aes(), the color applies to all.
 ggplot(mpg) + 
   geom_point(aes(x = displ, y = hwy), color = 'blue')
 ```
