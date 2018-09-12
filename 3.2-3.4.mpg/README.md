@@ -1,6 +1,8 @@
-```mpg```
-
+```R
+mpg
 ```
+
+```R
 # A tibble: 234 x 11
    manufacturer model      displ  year   cyl trans      drv     cty   hwy fl    class  
    <chr>        <chr>      <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr>  
@@ -17,18 +19,34 @@
 # ... with 224 more rows
 ```
 
-```?mpg```
+```R
+?mpg
+```
 
-```ggplot(mpg) +                         
-  geom_point(aes(x = displ, y = hwy))```
+```R
+ggplot(mpg) +                         
+  geom_point(aes(x = displ, y = hwy))
+```
   
 ![code-1](mpg1.png)
 
-```ggplot(mpg) + 
-  geom_point(aes(x = displ, y = hwy, color = class))```
+```R
+ggplot(mpg) + 
+  geom_point(aes(x = displ, y = hwy, color = class))
+```
 
-```ggplot(mpg) + 
-  geom_point(aes(x = displ, y = hwy, alpha = class))```
+![code-2](mpg2.png)
 
-```ggplot(mpg) + 
-  geom_point(aes(x = displ, y = hwy), color = 'blue')```
+```R
+ggplot(mpg) + 
+  geom_point(aes(x = displ, y = hwy, alpha = class))
+```
+
+![code-3](mpg3.png)
+
+```R
+ggplot(mpg) + 
+  geom_point(aes(x = displ, y = hwy), color = 'blue')
+```
+
+![code-4](mpg4.png)
